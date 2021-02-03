@@ -45,7 +45,7 @@ export default {
     ...mapActions({fetchCurrency: 'fetchCurrency'}),
     async refresh() {
       this.loading = true
-      this.currency = await this.$store.dispatch('fetchCurrency')
+      this.currency = await this.fetchCurrency()
       this.loading = false
     }
   },
