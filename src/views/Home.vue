@@ -37,12 +37,12 @@ export default {
     currency: null
   }),
   async mounted() {
-    this.currency = await this.pasha()
+    this.currency = await this.fetchCurrency()
     console.log(this.currency)
     this.loading = false
   },
   methods: {
-    ...mapActions({pasha: 'fetchCurrency'}),
+    ...mapActions({fetchCurrency: 'fetchCurrency'}),
     async refresh() {
       this.loading = true
       this.currency = await this.$store.dispatch('fetchCurrency')
